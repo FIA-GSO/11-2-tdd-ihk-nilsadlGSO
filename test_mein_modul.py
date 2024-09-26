@@ -1,3 +1,6 @@
+import pytest
+from mein_modul import *
+
 
 testDataPositive = [
       (1,100,1),
@@ -21,21 +24,21 @@ testDataNegativeType=[
 @pytest.mark.parametrize('reached, maxPoints, expected', testDataPositive)
 def test_calculate_percent__postiv_test( reached, maxPoints, expected):
 
-      result = function(reached, maxPoints)
-      
+      result = calculate_percent(reached, maxPoints)
+            
       assert result == expected
 
 
 @pytest.mark.parametrize('reached, maxPoints, expected', testDataNegativeValue)
 def test_calculate_percent__negative_value_test( reached, maxPoints, expected):
       
-      result = function(reached, maxPoints)
+      result = calculate_percent(reached, maxPoints)
       
       assert result == expected
 
 @pytest.mark.parametrize('reached, maxPoints, expected', testDataNegativeType)
-def test_calculate_percent__negative_value_test( reached, maxPoints, expected):
+def test_calculate_percent__negative_type_test( reached, maxPoints, expected):
       
-      result = function(reached, maxPoints)
+      result = calculate_percent(reached, maxPoints)
       
       assert result == expected
